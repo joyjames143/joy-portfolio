@@ -237,6 +237,7 @@ li{
     transition: color 650mms;
     margin-left: 2rem;
     margin-right: 2rem;
+    color: #A9A9A9;
     
 }
 .fa-facebook-square:hover{
@@ -553,7 +554,7 @@ input[type='submit']:hover{
         padding: 0 2rem 0 2rem;
     }
     .profile-img{
-        margin: 0 0 7rem 0;
+        margin: 0 0 2rem 2.5rem;
 
     }
     .portfolio-item{
