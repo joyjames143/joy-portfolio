@@ -1,23 +1,28 @@
-<?php
+<?php 
 
-$name=$_REQUEST['name']
-$companyname=$_REQUEST['companyname']
-$name=$_REQUEST['name']
-$subject=$_REQUEST['subject']
+    if(isset($_POST['btn-send']))
+    {
+        $UserName = $_POST['name'];
+        $Email = $_POST['email'];
+        $Subject = $_POST['Subject'];
+        $Companyname = $_POST['company'];
 
+        if(empty($UserName) || empty($Email) || empty($Subject) || empty($Companyname))
+        {
+            header('location:index.php?error');
+        }
+        else
+        {
+            $to = "joyjames.work@gmail.com";
 
-if (empty($name)|| empty($email) || empty($subject))
-{
-    echo "please fill the empty fields"
-}
-else
-{
-    mail("joyjames.work@gmail.com","message from portfolio",$subject,"From :$name<$email>");
-
-    echo "<script type='text/javascript'>alert('your message is submited');
-
-    window.history.log(-1)
-    
-    </script>";
-}
+            if(mail($to,$Subject,$Msg,$Email))
+            {
+                header("location:index.php?success");
+            }
+        }
+    }
+    else
+    {
+        header("location:index.php");
+    }
 ?>
